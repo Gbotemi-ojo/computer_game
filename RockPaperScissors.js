@@ -22,17 +22,16 @@
 
 let playerData = document.getElementById("playerData")
 let computerData = document.getElementById("computerData")
-let gameState = document.getElementById("winOrLose")
-let computerScores = document.getElementById("computerScores")
+//let gameState = document.getElementById("winOrLose")
 let userScores = document.getElementById("userScores")
-gameState.textContent;
-userScores.textContent = 0
-computerScores.textContent = 0
+let computerScores = document.getElementById("computerScores")
+//gameState.textContent;
+let score1 = 0
+let score2 = 0
 
 
 function computer(){
-    let random =Math.floor( Math.random() * 3 ) + 1
-    return random
+    return Math.floor( Math.random() * 3 ) + 1
 }
 function computerConditionalStatement(){
     if (computer() === 1){
@@ -46,33 +45,84 @@ function computerConditionalStatement(){
     }
 }
 function rock(){
+    computerConditionalStatement()
     let choseRock = playerData.textContent = `YOU CHOSE: ROCK`
-        computerConditionalStatement()
-        if(computer() === 2){
-            userScores.textContent = 1
+        if(computerData.textContent === `COMPUTER CHOSE: ROCK` ){
+          score1 +=0
+          score2 +=0
+          userScores.textContent = `YOUR SCORE: ${score1}`
+           computerScores.textContent =  `COMPUTER SCORE: ${score2}` 
         }
-        else if(computer() === 3){
-            computerScores.textContent =3
+        else if(computerData.textContent === `COMPUTER CHOSE: PAPER`){
+          score2 += 1
+          score1 += 0
+          userScores.textContent = `YOUR SCORE: ${score1}`
+          computerScores.textContent = `COMPUTER SCORE: ${score2}`
+        }
+        else if (computerData.textContent = `COMPUTER CHOSE: SCISSORS`){
+            score1 +=1
+            score2 +=0
+            userScores.textContent = `YOUR SCORE: ${score1}`
+            computerScores.textContent = `COMPUTER SCORE: ${score2}`
+        }
+        if(score1 + score2 === 5){
+            let score1 = 0
+            let score2 = 0
         }
 }
 function paper(){
+    computerConditionalStatement()
     let chosePaper = playerData.textContent = `YOU CHOSE: PAPER`
-    computerConditionalStatement()
+    if(computerData.textContent === `COMPUTER CHOSE: ROCK` ){
+        score1 +=1
+        score2 +=0
+        userScores.textContent =`YOUR SCORE: ${score1}`
+         computerScores.textContent = `COMPUTER SCORE: ${score2}` 
+      }
+      else if(computerData.textContent === `COMPUTER CHOSE: PAPER`){
+        score2 += 0
+        score1 += 0
+        userScores.textContent = `YOUR SCORE: ${score1}`
+        computerScores.textContent = `COMPUTER SCORE: ${score2}`
+      }
+      else if (computerData.textContent = `COMPUTER CHOSE: SCISSORS`){
+          score1 +=0
+          score2 +=1
+          userScores.textContent = `YOUR SCORE: ${score1}`
+          computerScores.textContent = `COMPUTER SCORE: ${score2}`
+      }
+      if(score1 + score2 === 5){
+          let score1 = 0
+          let score2 = 0
+      }
 }
+
 function scissors(){
-    let choseScissors = playerData.textContent = `YOU CHOSE: SCISSORS`
     computerConditionalStatement()
+    let choseScissors = playerData.textContent = `YOU CHOSE: SCISSORS`
+    if(computerData.textContent === `COMPUTER CHOSE: ROCK` ){
+        score1 +=0
+        score2 +=1
+        userScores.textContent = `YOUR SCORE: ${score1}`
+         computerScores.textContent = `COMPUTER SCORE: ${score2}`
+      }
+      else if(computerData.textContent === `COMPUTER CHOSE: PAPER`){
+        score2 += 0
+        score1 += 1
+        userScores.textContent = `YOUR SCORE: ${score1}`
+        computerScores.textContent = `COMPUTER SCORE: ${score2}`
+      }
+      else if (computerData.textContent = `COMPUTER CHOSE: SCISSORS`){
+          score1 +=0
+          score2 +=0
+          userScores.textContent = `YOUR SCORE: ${score1}`
+          computerScores.textContent = `COMPUTER SCORE: ${score2}`
+      }
+      if(score1 + score2 === 5){
+        let score1 = 0
+        let score2 = 0
+    }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
