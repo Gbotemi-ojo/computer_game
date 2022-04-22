@@ -22,10 +22,10 @@
 
 let playerData = document.getElementById("playerData")
 let computerData = document.getElementById("computerData")
-//let gameState = document.getElementById("winOrLose")
+let gameState = document.getElementById("winOrLose")
 let userScores = document.getElementById("userScores")
 let computerScores = document.getElementById("computerScores")
-//gameState.textContent;
+gameState.textContent;
 let score1 = 0
 let score2 = 0
 
@@ -52,22 +52,21 @@ function rock(){
           score2 +=0
           userScores.textContent = `YOUR SCORE: ${score1}`
            computerScores.textContent =  `COMPUTER SCORE: ${score2}` 
+           gameState.textContent = "IT'S A TIE"
         }
         else if(computerData.textContent === `COMPUTER CHOSE: PAPER`){
           score2 += 1
           score1 += 0
           userScores.textContent = `YOUR SCORE: ${score1}`
           computerScores.textContent = `COMPUTER SCORE: ${score2}`
+          gameState.textContent = "COMPUTER WINS THIS ROUND"
         }
         else if (computerData.textContent = `COMPUTER CHOSE: SCISSORS`){
             score1 +=1
             score2 +=0
             userScores.textContent = `YOUR SCORE: ${score1}`
             computerScores.textContent = `COMPUTER SCORE: ${score2}`
-        }
-        if(score1 + score2 === 5){
-            let score1 = 0
-            let score2 = 0
+            gameState.textContent = "YOU WIN THIS ROUND!"
         }
 }
 function paper(){
@@ -78,22 +77,22 @@ function paper(){
         score2 +=0
         userScores.textContent =`YOUR SCORE: ${score1}`
          computerScores.textContent = `COMPUTER SCORE: ${score2}` 
+         gameState.textContent = "YOU WIN THIS ROUND!"
       }
       else if(computerData.textContent === `COMPUTER CHOSE: PAPER`){
         score2 += 0
         score1 += 0
         userScores.textContent = `YOUR SCORE: ${score1}`
         computerScores.textContent = `COMPUTER SCORE: ${score2}`
+        gameState.textContent = "IT'S A TIE"
+
       }
       else if (computerData.textContent = `COMPUTER CHOSE: SCISSORS`){
           score1 +=0
           score2 +=1
           userScores.textContent = `YOUR SCORE: ${score1}`
           computerScores.textContent = `COMPUTER SCORE: ${score2}`
-      }
-      if(score1 + score2 === 5){
-          let score1 = 0
-          let score2 = 0
+          gameState.textContent = "COMPUTER WINS THIS ROUND"
       }
 }
 
@@ -105,23 +104,22 @@ function scissors(){
         score2 +=1
         userScores.textContent = `YOUR SCORE: ${score1}`
          computerScores.textContent = `COMPUTER SCORE: ${score2}`
+         gameState.textContent = "COMPUTER WINS THIS ROUND"
       }
       else if(computerData.textContent === `COMPUTER CHOSE: PAPER`){
         score2 += 0
         score1 += 1
         userScores.textContent = `YOUR SCORE: ${score1}`
         computerScores.textContent = `COMPUTER SCORE: ${score2}`
+        gameState.textContent = "YOU WIN THIS ROUND!"
       }
       else if (computerData.textContent = `COMPUTER CHOSE: SCISSORS`){
           score1 +=0
           score2 +=0
           userScores.textContent = `YOUR SCORE: ${score1}`
           computerScores.textContent = `COMPUTER SCORE: ${score2}`
+          gameState.textContent = "IT'S A TIE"
       }
-      if(score1 + score2 === 5){
-        let score1 = 0
-        let score2 = 0
-    }
 }
 
 
