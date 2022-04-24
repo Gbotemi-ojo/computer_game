@@ -33,6 +33,12 @@ let score2 = 0
 function computer(){
     return Math.floor( Math.random() * 3 ) + 1
 }
+function endgame(){
+    if (score1 + score2 === 5){
+        score1 = 0
+        score2 = 0
+    }
+}
 function computerConditionalStatement(){
     if (computer() === 1){
         computerData.textContent = `COMPUTER CHOSE: ROCK`
@@ -68,6 +74,7 @@ function rock(){
             computerScores.textContent = `COMPUTER SCORE: ${score2}`
             gameState.textContent = "YOU WIN THIS ROUND!"
         }
+        endgame()
 }
 function paper(){
     computerConditionalStatement()
@@ -94,6 +101,7 @@ function paper(){
           computerScores.textContent = `COMPUTER SCORE: ${score2}`
           gameState.textContent = "COMPUTER WINS THIS ROUND"
       }
+      endgame()
 }
 
 function scissors(){
@@ -119,10 +127,10 @@ function scissors(){
           userScores.textContent = `YOUR SCORE: ${score1}`
           computerScores.textContent = `COMPUTER SCORE: ${score2}`
           gameState.textContent = "IT'S A TIE"
+
       }
+      endgame()
 }
-
-
 
 
 
