@@ -58,7 +58,7 @@ function rock(){
           score2 +=0
           userScores.textContent = `YOUR SCORE: ${score1}`
            computerScores.textContent =  `COMPUTER SCORE: ${score2}` 
-           gameState.textContent = "IT'S A TIE"
+           gameState.textContent = "IT'S A TIE,YOU BOTH CHOSE ROCK"
         }
         else if(computerData.textContent === `COMPUTER CHOSE: PAPER`){
           score2 += 1
@@ -91,7 +91,7 @@ function paper(){
         score1 += 0
         userScores.textContent = `YOUR SCORE: ${score1}`
         computerScores.textContent = `COMPUTER SCORE: ${score2}`
-        gameState.textContent = "IT'S A TIE"
+        gameState.textContent = "IT'S A TIE, YOU BOTH CHOSE PAPER"
 
       }
       else if (computerData.textContent = `COMPUTER CHOSE: SCISSORS`){
@@ -126,7 +126,7 @@ function scissors(){
           score2 +=0
           userScores.textContent = `YOUR SCORE: ${score1}`
           computerScores.textContent = `COMPUTER SCORE: ${score2}`
-          gameState.textContent = "IT'S A TIE"
+          gameState.textContent = "IT'S A TIE,YOU BOTH CHOSE SCISSORS"
 
       }
       endgame()
